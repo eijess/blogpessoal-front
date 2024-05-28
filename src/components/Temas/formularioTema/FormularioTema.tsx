@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Tema from '../../models/Tema';
-import { buscar, atualizar, cadastrar } from '../../services/Service';
-import { toastAlerta } from '../../utils/toastAlerta';
-import { AuthContext } from '../../contexts/AuthContexts';
+import Tema from '../../../models/Tema';
+import { buscar, atualizar, cadastrar } from '../../../services/Service';
+import { toastAlerta } from '../../../utils/toastAlerta';
+import { AuthContext } from '../../../contexts/AuthContexts';
 
 function FormularioTema() {
   const [tema, setTema] = useState<Tema>({} as Tema);

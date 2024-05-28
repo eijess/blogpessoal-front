@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Postagem from '../../../models/Postagem'
 import { buscar, deletar } from '../../../services/Service'

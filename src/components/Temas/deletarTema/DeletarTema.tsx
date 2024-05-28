@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
-import Tema from '../../models/Tema'
-import { buscar, deletar } from '../../services/Service'
-import { toastAlerta } from '../../utils/toastAlerta'
-import { AuthContext } from '../../contexts/AuthContexts'
+import Tema from '../../../models/Tema'
+import { buscar, deletar } from '../../../services/Service'
+import { toastAlerta } from '../../../utils/toastAlerta'
+import { AuthContext } from '../../../contexts/AuthContexts'
 
 function DeletarTema() {
     const [tema, setTema] = useState<Tema>({} as Tema)

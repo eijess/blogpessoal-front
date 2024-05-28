@@ -9,9 +9,9 @@ import ListaPostagens from './components/postagens/listaPostagens/ListaPostagens
 import FormularioPostagem from './components/postagens/formularioPostagem/FormularioPostagem';
 import Perfil from './pages/perfil/Perfil';
 import Header from './components/header/Header';
-import ListaTemas from './Temas/listaTemas/ListaTemas';
-import FormularioTema from './Temas/formularioTema/FormularioTema';
-import DeletarTema from './Temas/deletarTema/DeletarTema';
+import ListaTemas from './components/Temas/listaTemas/ListaTemas';
+import FormularioTema from './components/Temas/formularioTema/FormularioTema';
+import DeletarTema from './components/Temas/deletarTema/DeletarTema';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 import { AuthProvider } from './contexts/AuthContexts';
 

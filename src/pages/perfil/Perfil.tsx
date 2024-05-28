@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import loginLogo from '../../assets/login.jpg'
 import { toastAlerta } from '../../utils/toastAlerta'
 import { AuthContext } from '../../contexts/AuthContexts'
+import { useContext, useEffect } from 'react'
 
 function Perfil() {
   let navigate = useNavigate()
@@ -22,10 +22,10 @@ function Perfil() {
       <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} className='rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10' />
       <div className="relative mt-[-6rem] h-72 flex flex-col bg-sky-500 text-white text-2xl items-center justify-center">
         <p>Nome: {usuario.nome} </p>
-        <p>Email: {usuario.usuario}</p>
+        <p>E-mail: {usuario.usuario}</p>
       </div>
     </div>
   )
 }
 
-export default Perfil
+export default Perfil;

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
@@ -115,7 +115,8 @@ function FormularioPostagem() {
       }
     } else {
       try {
-        await cadastrar(`/postagens`, postagem, setPostagem, {
+        const { data, ...novaPostagem } = postagem
+        await cadastrar(`/postagens`, novaPostagem, setPostagem, {
           headers: {
             Authorization: token,
           },

@@ -2,7 +2,6 @@ import { createContext, ReactNode, useState } from "react"
 import UsuarioLogin from "../models/UsuarioLogin"
 import { login } from "../services/Service"
 import { toastAlerta } from "../utils/toastAlerta"
-// import { toastAlerta } from "../utils/toastAlerta"
 
 interface AuthContextProps {
     usuario: UsuarioLogin
@@ -18,8 +17,26 @@ interface AuthProviderProps {
 export const AuthContext = createContext({} as AuthContextProps)
 
 export function AuthProvider({ children }: AuthProviderProps) {
-
+    
+    function getHours() {
+        let res= ''
+        const hora = new Date().getHours() + 1
+        if (hora >= 0 && hora < 6)
+            res= 'Boa madrugada!'
+        
+        else if (hora >= 6 && hora < 12) 
+            res= 'Bom dia!'
+        
+        else if (hora >= 12 && hora < 18) 
+            res= 'Boa tarde!'
+        
+        else 
+            res= 'Boa noite!'
+        
+        return res
+    }
     const [usuario, setUsuario] = useState<UsuarioLogin>({
+
         id: 0,
         nome: "",
         usuario: "",
@@ -34,7 +51,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(true)
         try {
             await login(`/usuarios/logar`, userLogin, setUsuario)
-            toastAlerta('Você precisa estar logado', 'info');
+            toastAlerta(getHours(), 'info');
             setIsLoading(false)
 
         } catch (error) {
